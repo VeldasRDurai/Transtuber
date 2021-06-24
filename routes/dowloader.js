@@ -15,15 +15,12 @@ const show = async ( link ) => {
         const options = document.querySelectorAll('ytd-menu-service-item-renderer.style-scope.ytd-menu-popup-renderer');
         options.length ?  (() => { options[0].click(); return false; })() : true ;
     })) return 'No transcript available 1';
+    
     try{ await page.waitForSelector('ytd-transcript-body-renderer.style-scope.ytd-transcript-renderer');
-    }catch(e){
-        return 'No transcript available 2'
-    }
-    const transcript = await page.evaluate( () => {
-        const allNode = document.querySelectorAll('ytd-transcript-body-renderer.style-scope.ytd-transcript-renderer')[0];
-        // const eachNode = document.querySelectorAll('ytd-transcript-body-renderer.style-scope.ytd-transcript-renderer div.cue-group.style-scope.ytd-transcript-body-renderer');
-        return allNode ?  allNode.innerText : 'No transcript available 2';
-    });
+    }catch(e){ return 'No transcript available 2'}
+    
+    const transcript = await page.evaluate( () => 
+        document.querySelectorAll('ytd-transcript-body-renderer.style-scope.ytd-transcript-renderer')[0].innerText );
 
     return transcript.split(/\n{0,1}\d{2}:\d{2}\n/g).join(' ') ;
     // await browser.close();

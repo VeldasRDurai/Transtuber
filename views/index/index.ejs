@@ -1,0 +1,23 @@
+<%- include('../layoutH') %>
+  <%- include('header') %>
+
+  <link rel="stylesheet" href="stylesheets/index/index.css">
+  <div id="input-space">
+    <div id="form-container" >
+      <input id="link" type="text" placeholder="Youtube Link Address" />
+      <input type="button" value="GIVE" onClick='give()' />
+    </div>
+  </div>
+
+  <div id="help" >
+    <div> 1. Enter the youtube link of video in the input field. </div>
+    <div> 2. Press GIVE </div>
+    <div> 3. Verify that it is same as the video you wanted </div>
+  </div>
+
+  <div id="output">
+
+  </div>
+
+  <script src="javascripts/get.js"></script>
+<%- include('../layoutF') %>
