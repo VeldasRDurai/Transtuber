@@ -13,7 +13,16 @@ const give = async () => {
         console.log( data );
 
         document.getElementById('output').innerText =  data.transcript ;
-        document.getElementById('help').innerHTML = 
+        if( typeof(data.transcript) === "object" ){
+            let selectTag = '<label for="language">Choose the language : </label> <select name="language" id="language" onChange="changeLanguage()" >';
+            data.transcript.forEach( i => {
+                sessionStorage.setItem(i.language, i.content );
+                selectTag += '<option value="'+ i.language +'">'+ i.language +'</option>'
+            });
+            selectTag += '</select>';
+            document.getElementById('output').innerHTML += selectTag;
+        }
+        if ( data.url !== undefined ) document.getElementById('help').innerHTML = 
             '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+data.url+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
     } catch (e) {
         console.log('Error : ', e);    
@@ -38,3 +47,6 @@ const copy = () => {
                 input.remove();
             })();
     }
+const ok =() => {
+    console.log('hello');
+}
