@@ -54,3 +54,11 @@
     font-size: 1.5rem;
     font-family: 'Nunito', sans-serif;
 }
+
+#output {
+    height: 30vh;
+    width: 81vw;
+    display: flex;
+    text-align: justify;
+    overflow: scroll;
+}

@@ -22,7 +22,12 @@ const show = async ( link ) => {
     const transcript = await page.evaluate( () => 
         document.querySelectorAll('ytd-transcript-body-renderer.style-scope.ytd-transcript-renderer')[0].innerText );
 
-    return transcript.split(/\n{0,1}\d{2}:\d{2}\n/g).join(' ') ;
+    const url = await page.evaluate( () => window.location.search.split('=')[1] )
+    // await page.evaluate( () => 
+    //     [... document.querySelectorAll('div#top-level-buttons-computed.top-level-buttons.style-scope.ytd-menu-renderer ytd-button-renderer.style-scope.ytd-menu-renderer.force-icon-button.style-default.size-default a.yt-simple-endpoint.style-scope.ytd-button-renderer')]
+    //         .find( (v) =>{ return v.innerText.toLowerCase() === 'share' }).click () )
+
+    return { transcript : transcript.split(/\n{0,1}\d{2}:\d{2}\n/g).join(' '), url };
     // await browser.close();
 };
 
