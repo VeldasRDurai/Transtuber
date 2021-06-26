@@ -1,0 +1,28 @@
+#help{
+    box-sizing: border-box;
+    border: 1px solid green;
+
+    height:80px;
+    display: flex;
+    padding: 0 100px;
+    align-items: center;
+    color:white;
+    font-family: 'Jomhuria', cursive;
+}
+#help #insruction-right{
+    color:#1ba94c;
+    text-decoration:overline;
+    text-decoration-color: white ;
+    text-decoration-thickness: 2px;
+    font-size:30px;
+    font-weight:100;
+}
+#help #insruction-left{
+    color:#66ff00;
+    margin-left: auto;
+    font-size:50px;
+    display: flex;
+}
+#help #downarrow{
+    color:white;
+}

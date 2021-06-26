@@ -1,5 +1,6 @@
 
 const give = async () => {
+    // move();
     const link = document.getElementById('link').value;
     document.getElementById('output').innerText = 'loading...';
     try{
@@ -8,19 +9,21 @@ const give = async () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ link })
         });
-        console.log( res );
         const data = await res.json();
         console.log( data );
-
-        document.getElementById('output').innerText =  data.transcript ;
-        if( typeof(data.transcript) === "object" ){
-            let selectTag = '<label for="language">Choose the language : </label> <select name="language" id="language" onChange="changeLanguage()" >';
-            data.transcript.forEach( i => {
-                sessionStorage.setItem(i.language, i.content );
-                selectTag += '<option value="'+ i.language +'">'+ i.language +'</option>'
-            });
-            selectTag += '</select>';
-            document.getElementById('output').innerHTML += selectTag;
+        if( typeof data.transcript === 'string' ){
+            document.getElementById('output').innerText = data.transcript;
+        }else{
+            document.getElementById('output').innerText =  data.transcript[0].content ;
+            if( data.transcript !== undefined ){
+                let selectTag = '<label for="language">Choose the language : </label> <select name="language" id="language" onChange="changeLanguage()" >';
+                data.transcript.forEach( item => {
+                    sessionStorage.setItem(item.language, item.content );
+                    selectTag += '<option value="'+ item.language +'">'+ item.language +'</option>'
+                });
+                selectTag += '</select>';
+                document.getElementById('options').innerHTML = selectTag;
+            }
         }
         if ( data.url !== undefined ) document.getElementById('help').innerHTML = 
             '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+data.url+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
@@ -47,6 +50,27 @@ const copy = () => {
                 input.remove();
             })();
     }
-const ok =() => {
-    console.log('hello');
+const changeLanguage =() => {
+    const language = document.getElementById('language').value;
+    console.log( language );
+    document.getElementById('output').innerText = sessionStorage.getItem( language );
+}
+
+var i = 0;
+const move = () => {
+    if (i === 0) {
+        i = 1;
+        var elem = document.getElementById("myBar");
+        var width = 0;
+        var id = setInterval(() => {
+            if (width >= 100) {
+                clearInterval(id);
+                i = 0;
+            } else {
+                width++;
+                elem.style.width = width + "%";
+                elem.innerHTML = width  + "%";
+            }
+        },300 );
+    }
 }
