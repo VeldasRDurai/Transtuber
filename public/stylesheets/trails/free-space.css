@@ -1,0 +1,14 @@
+#free-space{
+    height:200px;
+    background-color:black;
+    position: relative;
+    z-index: 10;
+}
+#free-space #move{
+    height: 10px;
+    width: 200px;
+    position:absolute;
+    bottom: 114px;
+    transform:rotateY(180deg);
+    /* background-color: red; */
+}
