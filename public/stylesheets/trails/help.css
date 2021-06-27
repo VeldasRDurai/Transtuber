@@ -1,31 +1,46 @@
 #help{
     box-sizing: border-box;
-    border: 1px solid green;
+    /* border-bottom: 1px solid green; */
 
     height:80px;
     display: flex;
     padding: 0 100px;
     align-items: center;
-    color:white;
     font-family: 'Jomhuria', cursive;
 
-    background-color:black;
     color:white;
+    background-color:black;
 }
 #help #insruction-right{
-    color:#1ba94c;
+    /* color:#1ba94c;
     text-decoration:overline;
     text-decoration-color: white ;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 2px; */
+    color:white;
     font-size:30px;
     font-weight:100;
+    border: 2px solid blue;
+    border-radius:10px;
+    padding: 5px 20px;
 }
 #help #insruction-left{
-    color: #08ff08;;
+    /* color: #08ff08; */
+    color: black;
     margin-left: auto;
     font-size:50px;
     display: flex;
+    border-radius: 10px;
+
+    
+    color:black;
+    position: absolute;
+    left: 35%;
+    top: 50%;
 }
 #help #downarrow{
-    color:white;
+    color:black;
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    font-size: 200px;
 }
