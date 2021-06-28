@@ -1,0 +1,15 @@
+#form{
+    /* box-sizing: border-box;
+    border: 1px solid blue; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:20vh;
+    /* background-color:#00f008; */
+}
+#form input{
+    height:40px;
+    width:50%;
+    font-size: 30px;
+}

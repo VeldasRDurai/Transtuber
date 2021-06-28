@@ -1,15 +1,27 @@
+var lastScroll = window.scrollY;
 document.addEventListener( 'scroll', () => {
-    if( window.scrollY < 250 ) document.querySelector("#header #header-img").style.transform = "rotate("+ (25 - window.scrollY/6) +"deg)";
+    if( window.scrollY < 250 ) {
+        document.querySelector("#header #header-img").style.transform = "rotate("+ (25 - window.scrollY/6) +"deg)";
+    } else {
+        document.querySelector("#header #header-img").style.transform = "rotate(-16deg)";
+    }
     // var randomNum = Math.floor((Math.random() * 4) + 1);
     // console.log( randomNum );
 
     if( window.scrollY >= 250 && window.scrollY <= 550 ) {
         document.querySelector('#free-space #move').style.right = ( screen.width * (550 - window.scrollY) /300 ) +'px';
     } else if( window.scrollY < 250){
-        document.querySelector('#free-space #move').style.right = (screen.width)+'px';
+        document.querySelector('#free-space #move').style.right = screen.width+'px';
     } else {
-        document.querySelector('#free-space #move').style.right = '-20px';
+        document.querySelector('#free-space #move').style.right = '-220px';
     }
+
+    if ( window.scrollY < lastScroll ){
+            document.querySelector('#free-space #move svg').style.transform = 'rotateY(180deg)';
+    } else {
+            document.querySelector('#free-space #move svg').style.transform = 'rotateY(0deg)';
+    }
+    lastScroll = window.scrollY;
 
     const sub = document.querySelector('#header #header-text #sub');
     const head = document.querySelector('#header #header-text #head');
@@ -123,7 +135,7 @@ const entered = () => {
 }
 
 document.querySelector('#help #insruction-right').addEventListener('mouseenter', () => {
-    document.querySelector('#help #insruction-right').style.backgroundColor = 'black';
+    // document.querySelector('#help #insruction-right').style.backgroundColor = 'black';
     document.querySelector('#header #header-text #sub').style.color = 'black';
     // entered();
 
@@ -133,7 +145,7 @@ document.querySelector('#help #insruction-right').addEventListener('mouseenter',
 
 });
 document.querySelector('#help #insruction-right').addEventListener('mouseleave', () => {
-    document.querySelector('#help #insruction-right').style.backgroundColor = '#0000';
+    // document.querySelector('#help #insruction-right').style.backgroundColor = '#0000';
     document.querySelector('#header #header-text #sub').style.color = 'white';
     // clearInterval(id);
     // document.querySelector('#help #insruction-left #downarrow').style.color = 'white';
@@ -141,4 +153,7 @@ document.querySelector('#help #insruction-right').addEventListener('mouseleave',
     document.querySelector('#header').style.backgroundColor = 'black';   
     document.querySelector('#free-space').style.backgroundColor = 'black';
     // document.querySelector('#help #insruction-left').style.color = '#08ff08'
-})
+});
+document.querySelector('#form input').addEventListener('click', () => {
+    document.querySelector('#form').scrollIntoView();
+});

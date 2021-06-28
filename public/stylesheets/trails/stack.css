@@ -1,0 +1,96 @@
+#utube {
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    height:400px; 
+    width: 100vw;
+}
+#utube #utube-video{
+    /* border: 1px solid blue; */
+    margin: 0 30px;
+    height:315px;
+    width:560px;
+}
+#utube-stack {
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height:100%;
+    overflow-x: scroll;
+    box-sizing: border-box;
+    position:relative;
+    /* padding-left: 30px; */
+}
+#utube-stack::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 6px rgba(0,0,0,0.9); */
+  border-radius: 5px;
+  background-color: #000; 
+}
+#utube-stack::-webkit-scrollbar{
+  width: 12px;
+  /* background-color: #000000; */
+}
+#utube-stack::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background-color: #f0002f;
+  /* background-image: -webkit-linear-gradient(90deg, transparent,rgba(0, 0, 0, 0.4) 50%, transparent, transparent ); */
+}
+
+#utube-stack #stack{ 
+    height:315px;
+    width:calc( 100vw - ( 580px + ( 30px * 2 ) ) - 20px );
+    display: flex;
+    align-items: center;
+    margin-left :20px;
+    /* overflow-x:scroll; */
+}
+#utube-stack #stack .card{
+    flex-shrink: 0;
+    height:100%;
+    width:280px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    background-color:#f00ff0;
+    border-radius: 10px;
+    transition: all 1s;
+    transform: rotate(-5deg);
+    transform-origin: 80% 0%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+}
+#utube-stack #stack .card .title{
+    position: absolute;
+    transform: rotateZ( 270deg );
+    font-size: 25px;
+    color: #000;
+    z-index: 1;
+    bottom: 20px;
+    left: -10px;
+}
+#utube-stack #stack .card .content {
+    /* margin-left: 30px; */
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 80%;
+    text-align: justify;
+    overflow-wrap: break-word;
+    padding: 15px;
+}
+/* #utube-stack #stack .card button {
+    margin-left: 30px;
+} */
+#utube-stack #stack .card:not( :first-child ){
+    box-shadow: -3rem 0 3rem -2rem #000;
+    margin-left: -200px;
+}
+#utube-stack #stack .card:hover{
+    transform: translate(0px,-20px) ;
+}
+#utube-stack #stack .card:hover ~ .card {
+    transform: translateX(180px) rotate(-5deg);
+}

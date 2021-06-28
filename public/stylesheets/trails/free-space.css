@@ -5,10 +5,9 @@
     z-index: 10;
 }
 #free-space #move{
-    height: 10px;
     width: 200px;
     position:absolute;
-    bottom: 114px;
+    bottom: -25px;
     transform:rotateY(180deg);
     /* background-color: red; */
 }
