@@ -1,8 +1,3 @@
-// document.addEventListener('load', () => {
-    // document.body.scrollTop = 0;
-    // document.documentElement.scrollTop = 0;
-// });
-
 if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
 } else {
@@ -13,7 +8,7 @@ if (history.scrollRestoration) {
 
 setTimeout(() => {
     document.querySelector('#shutter').style.display = 'none';
-    // window.scrollTo(0, 800);
+    window.scrollTo(0, 1000);
 }, 1250);
 
 setTimeout(() => {
@@ -23,7 +18,6 @@ setTimeout(() => {
 
 const showShutter = () => {
     var currentPosition = window.scrollY;
-    console.log( 'show shutter ' );
     window.scrollTo(0, 0);
     document.querySelector('#shutter').style.display = 'flex';
     document.querySelector('#shutter').style.backgroundColor = 'white';
@@ -35,5 +29,4 @@ const showShutter = () => {
     setTimeout(() => {
         document.querySelector('#shutter').style.backgroundColor = 'black';
     }, 500);
-
 }

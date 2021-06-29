@@ -19,6 +19,11 @@
     border-radius: 10px;
     padding: 0 10px;
 }
+#form input::placeholder{
+    text-align:center;
+    color: #1616179f;
+    font-size:20px;
+}
 #form input:focus{
     outline:none;
 }
@@ -29,4 +34,12 @@
 }
 #form svg:active #play-button-back {
     fill:#800;
+    animation:none;
+}
+#form svg:hover #play-button-front {
+    animation: blink 200ms ease-out infinite ;
+}
+@keyframes blink {
+    from { fill: black;}
+    to { fill: white;}
 }
