@@ -8,6 +8,8 @@
     background-color:white;
     z-index: 100;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #shutter #red, #shutter #black, #shutter #white{
     height: 100vh;

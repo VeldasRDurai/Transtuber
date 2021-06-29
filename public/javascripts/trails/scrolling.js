@@ -23,8 +23,8 @@ document.addEventListener( 'scroll', () => {
     }
     lastScroll = window.scrollY;
 
-    const sub = document.querySelector('#header #header-text #sub');
-    const head = document.querySelector('#header #header-text #head');
+    // const sub = document.querySelector('#header #header-text #sub');
+    // const head = document.querySelector('#header #header-text #head');
     // if(randomNum === 4){
     //     sub.style.border = 'none';
     //     head.style.border = 'none';
@@ -154,6 +154,36 @@ document.querySelector('#help #insruction-right').addEventListener('mouseleave',
     document.querySelector('#free-space').style.backgroundColor = 'black';
     // document.querySelector('#help #insruction-left').style.color = '#08ff08'
 });
-document.querySelector('#form input').addEventListener('click', () => {
-    document.querySelector('#form').scrollIntoView();
-});
+// document.querySelector('#form input').addEventListener('click', () => {
+//     document.querySelector('#form').scrollIntoView();
+// });
+const colors = [
+    { backgroundColor:'#c43253', color:'#d3b738' },
+    { backgroundColor:'#e5270e', color:'#7ebdc1' },
+    { backgroundColor:'#112378', color:'#f64a00' },
+    { backgroundColor:'#cd244a', color:'#eac417' },
+    { backgroundColor:'#eac417', color:'#2b64a9' },
+    { backgroundColor:'#28292b', color:'#a646a7' },
+    { backgroundColor:'#0e2f56', color:'#fc3b2d' },
+    { backgroundColor:'#009bc6', color:'#ffd15e' },
+    { backgroundColor:'#cc2e22', color:'#ffb812' }
+];
+// for( let card of document.querySelectorAll('#utube-stack #stack .card')){
+//     let n = colors[ Math.floor((Math.random() * 9) + 1) ];
+//     [card.style.background, card.style.color] = [ 'linear-gradient(to right,'+n.backgroundColor+' 70%, transparent)', n.color ] ;
+//     card.getElementsByTagName('button')[0].style.backgroundColor = n.color;
+// }
+const showStack = () => {
+    document.querySelector('#stack-space').style.display = 'flex';
+    document.querySelector('#stack-space #player').style.display = 'block';
+    document.querySelector('#stack-space #player-ball').style.display = 'block';
+    document.querySelector('#stack-space #container').style.display = 'block';
+    document.querySelector('#utube').style.display = 'none';
+    setTimeout(() =>{
+        document.querySelector('#stack-space').style.display = 'none';
+        document.querySelector('#stack-space #player').style.display = 'none';
+        document.querySelector('#stack-space #player-ball').style.display = 'none';
+        document.querySelector('#stack-space #container').style.display = 'none';
+        document.querySelector('#utube').style.display = 'flex';
+    },30000);
+}

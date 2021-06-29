@@ -1,0 +1,67 @@
+#stack-space{
+    height:200px;
+    width:100vw;
+    background-color:black;
+    background:linear-gradient(180deg, #161616 0%, #000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.circle {
+    display: inline-block;
+    background-color: #F00008;
+    height: 15px;
+    width: 15px;    
+    border-radius: 25px;
+}
+#container{
+    display:none;
+}
+
+#ball-1{ animation: bounce 1.2s linear infinite; }
+#ball-2{ animation: bounce 1.2s 0.1s linear infinite; }
+#ball-3{ animation: bounce 1.2s 0.2s linear infinite; }
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    40% { transform: translateY(23px); }
+    60% { transform: translateY(-25px); }
+    80%{ transform: translateY(0); }
+}
+
+#player{
+    display:none;
+    position: absolute;
+    border-radius: 2px;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background-color: #f00008;
+    animation: playing 30s cubic-bezier(1, 0.21, 1, 0.99) 1 normal forwards;
+}
+@keyframes playing {
+    from { width:0vw; }
+    to { width:100vw; }
+}
+#player-ball{
+    display:none;
+    visibility:hidden;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 10px;
+    width:10px;
+    border-radius: 5px;
+    background-color: #f00008;
+    animation: playing-ball 30s cubic-bezier(1, 0.21, 1, 0.99) 1 normal forwards;
+    transition: all 1s ease-in-out;
+}
+@keyframes playing-ball {
+    from { left: calc(0vw - 3px); }
+    to { left: calc(100vw - 3px); }
+}
+
+#stack-space:hover #player-ball{
+    visibility:visible;
+}
