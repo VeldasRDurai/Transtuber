@@ -1,44 +1,10 @@
 <%- include('../layoutH') %>
+  <%- include('shutter') %>
+  <%- include('help') %>
   <%- include('header') %>
-
-  <link rel="stylesheet" href="stylesheets/index/index.css">
-  <div id="input-space">
-    <div id="form-container" >
-      <input id="link" type="text" placeholder="Youtube Link Address" value="https://www.youtube.com/watch?v=UUDKEbX5OQw" />
-      <input type="button" value="GIVE" onClick='give()' />
-    </div>
-  </div>
-
-  <div id="help" >
-    <div> 1. Enter the youtube link of video in the input field. </div>
-    <div> 2. Press GIVE </div>
-    <div> 3. Verify that it is same as the video you wanted </div>
-  </div>
-  <!-- <style>
-    #myProgress {
-      width: 100%;
-      background-color: #ddd;
-    }
-    
-    #myBar {
-      width: 0%;
-      height: 30px;
-      background-color: #04AA6D;
-      text-align: center;
-      line-height: 30px;
-      color: white;
-    }
-  </style>
-  <div id="myProgress"> <div id="myBar">0%</div> </div> -->
-  
-
-  <div id='options'></div>
-  <input type="button" value="COPY" onClick='copy()' />
-  <div id="output">
-
-  </div>
-
-  <script src="javascripts/give.js"></script>
+  <%- include('free-space') %>
+  <%- include('stack') %>
+  <%- include('stack-space') %>
+  <%- include('form') %>
+  <%- include('footer') %>  
 <%- include('../layoutF') %>
-
-<!-- 9952139936 -->

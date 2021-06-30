@@ -1,0 +1,60 @@
+#help{
+    box-sizing: border-box;
+    /* border-bottom: 1px solid green; */
+
+    height:80px;
+    display: flex;
+    padding: 0 100px;
+    align-items: center;
+    font-family: 'Jomhuria', cursive;
+
+    color:white;
+    background-color:black;
+}
+#help #insruction-right{
+    /* color:#1ba94c;
+    text-decoration:overline;
+    text-decoration-color: white ;
+    text-decoration-thickness: 2px; */
+    color:white;
+    font-size:30px;
+    font-weight:100;
+    box-sizing: border-box;
+    border: 3px solid blue;
+    border-radius:10px;
+    padding: 5px 20px;
+    cursor:wait;
+    animation: gliter 500ms cubic-bezier(0.33, -0.31, 0.21, 1.67) infinite normal; 
+}
+#help #insruction-right:hover{
+    animation: none;
+    border:3px solid red;
+    background-color:black;
+}
+#help #insruction-left{
+    color: black;
+    margin-left: auto;
+    font-size:50px;
+    display: flex;
+    border-radius: 10px;
+
+    
+    color:black;
+    position: absolute;
+    left: 35%;
+    top: 50%;
+}
+#help #downarrow{
+    color:black;
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    font-size: 200px;
+}
+
+@keyframes gliter {
+    0% {  border-left-color: red; }
+    33% { border-top-color: red; }
+    66% {  border-right-color: red; }
+    100% {  border-bottom-color: red; }
+}

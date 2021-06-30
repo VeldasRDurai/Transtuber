@@ -1,0 +1,96 @@
+#stack-space{
+    height:200px;
+    width:100vw;
+    background-color:black;
+    background:linear-gradient(180deg, #161616 0%, #000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.circle {
+    display: inline-block;
+    background-color: #F00008;
+    height: 15px;
+    width: 15px;    
+    border-radius: 25px;
+}
+#container{
+    display:none;
+}
+
+#ball-1{ animation: bounce 1.2s linear infinite; }
+#ball-2{ animation: bounce 1.2s 0.1s linear infinite; }
+#ball-3{ animation: bounce 1.2s 0.2s linear infinite; }
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    40% { transform: translateY(23px); }
+    60% { transform: translateY(-25px); }
+    80%{ transform: translateY(0); }
+}
+
+#player{
+    display:none;
+    position: absolute;
+    border-radius: 2px;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background-color: #f00008;
+    animation: playing 30s cubic-bezier(1, 0.21, 1, 0.99) 1 normal forwards;
+}
+@keyframes playing {
+    from { width:0vw; }
+    to { width:100vw; }
+}
+#player-ball{
+    display:none;
+    visibility:hidden;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 10px;
+    width:10px;
+    border-radius: 5px;
+    background-color: #f00008;
+    animation: playing-ball 30s cubic-bezier(1, 0.21, 1, 0.99) 1 normal forwards;
+    transition: all 1s ease-in-out;
+}
+@keyframes playing-ball {
+    from { left: calc(0vw - 3px); }
+    to { left: calc(100vw - 3px); }
+}
+
+#stack-space:hover #player-ball{
+    visibility:visible;
+}
+
+#stack-space #notification{
+    display: none;
+    height: 150px;
+    width: 450px;
+    /* background-color: #161617; */
+    background: linear-gradient( 180deg, #F007 0%, #ef002f 50% ,#F007);
+    border-radius: 5px 5px 15px 15px;
+    transform-origin: 50% 0%;
+    animation: notify 1.5s cubic-bezier(0.4, 0, 1, 1) 1 normal;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Aleo', serif;
+    /* font-family: 'Jomhuria', cursive; */
+    /* font-family: 'Kranky', cursive; */
+    /* font-family: 'Anton', sans-serif; */
+    /* font-family: 'Nunito', sans-serif; */
+    /* font-family: 'Roboto Mono', monospace; */
+}
+@keyframes notify {
+    0% { transform:perspective(1000px) rotateX(90deg); }
+    50% { transform:perspective(450px) rotateX(80deg); }
+    70% { transform:perspective(450px) rotateX(-45deg); }
+    85% { transform:perspective(450px) rotateX(25deg); }
+    95% { transform:perspective(450px) rotateX(-10deg); }
+    98% { transform:perspective(450px) rotateX(5deg); }
+    100% { transform:perspective(450px) rotateX(0deg); }
+}
