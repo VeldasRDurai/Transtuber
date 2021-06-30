@@ -20,3 +20,24 @@ document.querySelector('#help #insruction-right').addEventListener('mouseleave',
 // document.querySelector('#form input').addEventListener('click', () => {
 //     document.querySelector('#form').scrollIntoView();
 // });
+
+var moverRight = undefined;
+document.querySelector('#mover-right').addEventListener('mouseenter', () => { 
+    moverRight = setInterval(() => {
+        document.querySelector('#utube-stack').scrollBy(30,0);
+    },100);
+});
+document.querySelector('#mover-right').addEventListener('mouseleave', () => { 
+    clearInterval(moverRight);
+});
+
+var moverLeft = undefined;
+document.querySelector('#mover-left').addEventListener('mouseenter', () => { 
+    moverLeft = setInterval(() => {
+        document.querySelector('#utube-stack').scrollBy(-30,0);
+    },100);
+});
+document.querySelector('#mover-left').addEventListener('mouseleave', () => { 
+    clearInterval(moverLeft);
+});
+

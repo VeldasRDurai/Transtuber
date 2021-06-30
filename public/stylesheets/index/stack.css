@@ -23,6 +23,7 @@
     overflow-x: scroll;
     box-sizing: border-box;
     position:relative;
+    scroll-behavior: smooth;
     /* padding-left: 30px; */
 
     /* border-right: 5px solid #000;
@@ -156,3 +157,14 @@
     from { font-size:10px; }
     to { font-size:14px; }
 }
+
+.mover{
+    height: 330px;
+    width:10px;
+    background:transparent;
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;
+}
+.mover svg { overflow: visible; }
