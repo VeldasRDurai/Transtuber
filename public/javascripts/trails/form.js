@@ -20,7 +20,7 @@ const showStack = () => {
     const link = document.querySelector('#form input').value;
     console.log('Youtube link : ' + link)
     // from the reference https://gist.github.com/Glurt/ea11b690ba4b1278e049
-    if( !(/http(s?):\/{2}((www.youtube.com\/((watch\?v)|(v)|(attribution_link\?a)))|(youtu.be\/))/).test(link) ){
+    if( !(/http(s?):\/{2}(wwww.)?(youtube.com\/((watch\?v)|(v)|(attribution_link\?a)))|(youtu.be\/(watch\?v)?)/).test(link) ){
         // for an invalid link => #stack-space , notification
         console.log('inside');
         document.querySelector('#stack-space').style.display = 'flex';
@@ -40,6 +40,7 @@ const showStack = () => {
         setTimeout(() =>{
             // contents of valid link => #utube
             document.querySelector('#utube').style.display = 'flex';
+            document.querySelector('#stack-space').style.display = 'none';
         },30000);
     }
 
