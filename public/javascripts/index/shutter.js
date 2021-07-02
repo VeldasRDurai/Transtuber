@@ -20,7 +20,6 @@ setTimeout(() => {
 const showShutter = (event) => {
 
     const text = event.parentElement.innerText;
-    console.log( text );
     navigator.clipboard ? navigator.clipboard.writeText(text) :
         (window.clipboardData && window.clipboardData.setData) ? window.clipboardData.setData('Text', text) :
             (() => {

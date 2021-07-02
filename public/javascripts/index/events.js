@@ -1,5 +1,7 @@
 document.querySelector('#help #insruction-right').addEventListener('mouseenter', () => {
     // document.querySelector('#help #insruction-right').style.backgroundColor = 'black';
+    document.querySelector('#header #header-text #head').style.visibility = 'hidden';
+    document.querySelector('#help #downarrow').style.visibility = 'visible';
     document.querySelector('#header #header-text #sub').style.color = 'black';
 
     document.querySelector('#help').style.backgroundColor = '#00f02f';    
@@ -9,6 +11,8 @@ document.querySelector('#help #insruction-right').addEventListener('mouseenter',
 });
 document.querySelector('#help #insruction-right').addEventListener('mouseleave', () => {
     // document.querySelector('#help #insruction-right').style.backgroundColor = '#0000';
+    document.querySelector('#header #header-text #head').style.visibility = 'visible';
+    document.querySelector('#help #downarrow').style.visibility = 'hidden';
     document.querySelector('#header #header-text #sub').style.color = 'white';
     // clearInterval(id);
     // document.querySelector('#help #insruction-left #downarrow').style.color = 'white';
@@ -17,9 +21,9 @@ document.querySelector('#help #insruction-right').addEventListener('mouseleave',
     document.querySelector('#free-space').style.backgroundColor = 'black';
     // document.querySelector('#help #insruction-left').style.color = '#08ff08'
 });
-// document.querySelector('#form input').addEventListener('click', () => {
-//     document.querySelector('#form').scrollIntoView();
-// });
+document.querySelector('#form svg').addEventListener('click', () => {
+    document.querySelector('#stack-space').scrollIntoView();
+});
 
 var moverRight = undefined;
 document.querySelector('#mover-right').addEventListener('mouseenter', () => { 

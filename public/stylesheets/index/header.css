@@ -1,7 +1,4 @@
-#header{
-    /* box-sizing: border-box;
-    border: 1px solid blue; */
-
+#header {    
     height:70vh;
     display: flex;
     justify-content:space-evenly;
@@ -11,39 +8,79 @@
     background-color:black;
     color:white;
 }
-#header #header-text{
-    /* box-sizing: border-box;
-    border: 1px solid blue; */
-    
+#header #header-text {
     width:25vw;
     display:flex;
     flex-direction: column;
     align-items: flex-start;
 }
 #header #header-text #head {
-    /* box-sizing: border-box; */
-    /* border-left: 1px solid blue; */
-
     color:#f0002f;
     font-size: 100px;
     font-family: 'Kranky', cursive;
     font-family: 'Anton', sans-serif;
 }
 #header #header-text #sub{
-    /* box-sizing: border-box;
-    border: 1px solid blue; */
-
     font-size:25px;
     font-weight: bold;
     font-family: 'Roboto Slab', serif;
 }
-#header #header-img{
-    /* box-sizing: border-box;
-    border: 1px solid blue; */
-
+#header #header-img {
     height: 450px;
     width: 785px;
     z-index: 11;
     transform: rotate(25deg);
     transform-origin: 100% 30%;
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1230px) { 
+    /* between medium Tablet and medium Lap(default) */
+    #header #header-img {
+        height: calc( 65vw * 0.573 );
+        width: 65vw; /* 100vw - ( 10vw space between + 25vw image ) */
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:1000px) { 
+    /* between standard Tablet to medium Tablet*/
+    #header #header-text {
+        width:35vw;
+    }
+    #header #header-img {
+        height: calc( 55vw * 0.573 );
+        width: 55vw;  /* 100vw - ( 10vw space between + 35vw image ) */
+    }
+}
+@media only screen and (min-width: 425px) and (max-width:768px) { 
+    /* between standard Tablet*/
+    #header {
+        height:auto;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    #header #header-text {
+        text-align: center;
+        width:50vw;
+    }
+    #header #header-img {
+        transform: none;
+        height: calc( 80vw * 0.573 );
+        width: 80vw;  /* 100vw - ( 10vw space between ) */
+    }
+}
+@media only screen and (max-width:425px) { 
+    #header {
+        height:auto;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    #header #header-text {
+        text-align: center;
+        width:80vw;
+    }
+    #header #header-img {
+        transform: none;
+        height: calc( 80vw * 0.573 );
+        width: 80vw;  /* 100vw - ( 10vw space between ) */
+    }
 }

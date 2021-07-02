@@ -83,10 +83,9 @@ const showStack = async () => {
                 } else {
                     document.querySelector('#utube-video').src = 'https://www.youtube.com/embed/'+ url;
                     document.querySelector('#utube #utube-stack #stack').innerHTML = 
-                        "<div class='card'> \
-                            <div class='title'> condition </div> \
-                            <div class='content'>"+ message +"</div> \
-                            <button  onClick='showShutter(e)' >Copy</button> \
+                        "<div class='card' style='background: linear-gradient( 180deg, #F007 0%, #ef002f 50% ,#F007);' > \
+                            <div class='title-error' > WARNING </div> \
+                            <div class='content-error'>"+ message +"</div> \
                         </div>";
                     document.querySelector('#utube').style.display = 'flex';
                     document.querySelector('#stack-space').style.display = 'none';

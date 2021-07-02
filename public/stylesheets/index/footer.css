@@ -8,7 +8,11 @@
     color:#777;
     background-color:#161617;
     padding: 20px 10px;
-    gap:15px;
+    /* gap:15px; */
+}
+#footer > * {
+    margin-top:15px;
+    text-align: center;
 }
 #send-feedback{
     cursor: pointer;
@@ -42,4 +46,13 @@
 }
 .link:hover {
     color:white;
+}
+
+@media only screen and (max-width: 425px) { /* Mobile large */
+    #footer-4{
+        flex-direction: column;
+        min-width: auto;
+        justify-content: center;
+        align-items: center
+    }
 }
