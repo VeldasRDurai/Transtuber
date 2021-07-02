@@ -53,7 +53,7 @@ const showStack = async () => {
         },30000)
 
         try{
-            const res = await fetch(`http://localhost:3000/give`, {
+            const res = await fetch(`https://transtuber.herokuapp.com/give`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ link })
