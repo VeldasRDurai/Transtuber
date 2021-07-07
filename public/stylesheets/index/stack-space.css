@@ -8,7 +8,7 @@
     justify-content: center;
     position: relative;
 }
-.circle {
+/* .circle {
     display: inline-block;
     background-color: #F00008;
     height: 15px;
@@ -28,7 +28,7 @@
     40% { transform: translateY(23px); }
     60% { transform: translateY(-25px); }
     80%{ transform: translateY(0); }
-}
+} */
 
 #player{
     display:none;

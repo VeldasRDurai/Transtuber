@@ -36,13 +36,15 @@ const showShutter = (event) => {
                 input.remove();
             })();    
 
-    var currentPosition = window.scrollY;
-    window.scrollTo(0, 0);
+    // var currentPosition = window.scrollY;
+    // window.scrollTo(0, 0);
+    document.body.style.overflowY = 'hidden';
     document.querySelector('#shutter').style.display = 'flex';
     document.querySelector('#shutter').style.backgroundColor = 'white';
     setTimeout(() => {
         document.querySelector('#shutter').style.display = 'none';
-        window.scrollTo(0, currentPosition);
+        // window.scrollTo(0, currentPosition);
+        document.body.style.overflowY = 'scroll';
     }, 1250);
     setTimeout(() => {
         document.querySelector('#shutter').style.backgroundColor = 'black';
